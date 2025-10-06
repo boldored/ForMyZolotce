@@ -1,0 +1,62 @@
+/* Стиль ForMyZolotce */
+:root{
+  --bg1:#021029;
+  --bg2:#0f3460;
+  --accent:#4da3ff;
+  --muted:#bcd9ff;
+  --card:#07213a;
+  --glass: rgba(255,255,255,0.03);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background: radial-gradient(circle at 10% 10%, rgba(77,163,255,0.06), transparent 20%), linear-gradient(180deg,var(--bg1),var(--bg2));
+  color:var(--muted);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+canvas#heartCanvas{position:fixed;left:0;top:0;width:100%;height:100%;z-index:0;pointer-events:none}
+
+.page{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column}
+.site-header{padding:28px 20px 10px;text-align:center}
+.site-header h1{margin:0;color:var(--accent);font-size:clamp(24px,4vw,40px);letter-spacing:0.6px}
+.nav{margin-top:12px}
+.nav a{color:var(--muted);text-decoration:none;margin:0 10px;padding:6px 10px;border-radius:8px;transition:background 0.25s, transform 0.15s}
+.nav a:hover{background:var(--glass);transform:translateY(-3px);color:white}
+
+.content{flex:1;display:flex;align-items:center;justify-content:center;padding:20px}
+.center{display:flex;flex-direction:column;align-items:center;gap:18px}
+
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter: blur(6px);border-radius:14px;padding:24px;max-width:900px;box-shadow:0 6px 30px rgba(2,10,30,0.6)}
+.lead{font-size:1.05rem;color:var(--muted);text-align:center;margin:0 0 8px}
+
+.site-footer{padding:18px;text-align:center;color:var(--muted);font-size:0.95rem;border-top:1px solid rgba(255,255,255,0.02)}
+
+.about-text{font-size:1.15rem;line-height:1.6;color:#dbeeff;text-align:center}
+
+/* Letter style */
+.letter{max-width:720px;background:linear-gradient(180deg, rgba(10,30,60,0.5), rgba(6,18,36,0.6));border:1px solid rgba(255,255,255,0.03);padding:32px;box-shadow:0 8px 40px rgba(2,10,30,0.6)}
+.letter h2{color:var(--accent);margin-top:0}
+
+/* Gallery */
+.gallery-wrapper{width:100%;max-width:1000px;overflow:hidden;border-radius:14px;margin-top:16px;border:1px solid rgba(255,255,255,0.03)}
+.gallery{display:flex;gap:10px;padding:12px;align-items:center;will-change:transform;min-height:240px}
+.gallery img{height:220px;border-radius:10px;object-fit:cover;box-shadow:0 6px 20px rgba(2,10,30,0.5)}
+
+/* fade transitions */
+.fade-in{animation:fadeIn 600ms ease both}
+.fade-out{animation:fadeOut 500ms ease both}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes fadeOut{from{opacity:1}to{opacity:0;transform:translateY(8px)}}
+
+/* responsive */
+@media (max-width:700px){
+  .gallery img{height:150px}
+  .card{padding:18px}
+}
+
+/* placeholder svg styling */
+img[alt="placeholder"]{filter:brightness(1.1) contrast(1.02)}
