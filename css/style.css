@@ -48,11 +48,19 @@ canvas#heartCanvas{position:fixed;left:0;top:0;width:100%;height:100%;z-index:0;
   margin: 20px auto;
 }
 
+.gallery-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 20px auto;
+}
+
 .gallery {
   display: flex;
   gap: 10px;
   animation: scrollLeft 40s linear infinite;
   will-change: transform;
+  flex-wrap: nowrap;
 }
 
 .gallery.reverse {
@@ -83,18 +91,7 @@ canvas#heartCanvas{position:fixed;left:0;top:0;width:100%;height:100%;z-index:0;
   width: 300px;
   height: auto;
   border-radius: 12px;
-  transition: transform 0.5s ease, opacity 1s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-
-.gallery img {
-  width: 300px;
-  height: auto;
-  border-radius: 10px;
+  flex-shrink: 0;
   transition: transform 0.5s ease, opacity 1s ease;
 }
 
