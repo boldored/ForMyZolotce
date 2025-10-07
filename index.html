@@ -28,27 +28,29 @@
     </div>
   </main>
 
-  <footer class="site-footer">
-    <span>Для Золотца 💙</span>
-  </footer>
-</div>
+<footer class="site-footer">
+  <span>Для Золотца 💙</span>
+</footer>
 
-<script src="js/main.js"></script>
-  <!-- 💙 Кнопка подтверждения -->
+<!-- 💙 Кнопка подтверждения -->
 <button id="loveButton">Нажми меня 💙</button>
 
-<!-- 💌 Сообщение, которое появится после нажатия -->
+<!-- 💌 Сообщение -->
 <div id="loveMessage" class="hidden">
   Нажатием этой кнопки вы подтверждаете, что вы самая любимая девушка на этой планете 💖
 </div>
 
+<!-- Скрипт должен быть ПЕРЕД закрывающим </body> -->
 <script>
-  const button = document.getElementById('loveButton');
-  const message = document.getElementById('loveMessage');
+  document.addEventListener("DOMContentLoaded", function() {
+    const button = document.getElementById("loveButton");
+    const message = document.getElementById("loveMessage");
 
-  button.addEventListener('click', () => {
-    message.classList.toggle('show');
+    button.addEventListener("click", () => {
+      message.classList.toggle("show");
+    });
   });
 </script>
+
 </body>
 </html>
