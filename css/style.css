@@ -42,9 +42,6 @@ canvas#heartCanvas{position:fixed;left:0;top:0;width:100%;height:100%;z-index:0;
 .letter h2{color:var(--accent);margin-top:0}
 
 /* Gallery */
-.gallery-wrapper{width:100%;max-width:1000px;overflow:hidden;border-radius:14px;margin-top:16px;border:1px solid rgba(255,255,255,0.03)}
-.gallery{display:flex;gap:10px;padding:12px;align-items:center;will-change:transform;min-height:240px}
-.gallery img{height:220px;border-radius:10px;object-fit:cover;box-shadow:0 6px 20px rgba(2,10,30,0.5)}
 .gallery-wrapper {
   overflow: hidden;
   width: 100%;
@@ -54,31 +51,44 @@ canvas#heartCanvas{position:fixed;left:0;top:0;width:100%;height:100%;z-index:0;
 .gallery {
   display: flex;
   gap: 10px;
-  animation: scrollLeft 30s linear infinite;
+  animation: scrollLeft 40s linear infinite;
+  will-change: transform;
 }
 
 .gallery.reverse {
-  animation: scrollRight 30s linear infinite;
+  animation: scrollRight 40s linear infinite;
 }
 
-/* Эффект плавного движения влево */
+/* движение влево */
 @keyframes scrollLeft {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
+  to {
     transform: translateX(-50%);
   }
 }
 
-/* Эффект плавного движения вправо */
+/* движение вправо */
 @keyframes scrollRight {
-  0% {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(50%);
-  }
+}
+
+.gallery img {
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.5s ease, opacity 1s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
 .gallery img {
