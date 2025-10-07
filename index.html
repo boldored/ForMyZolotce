@@ -34,5 +34,21 @@
 </div>
 
 <script src="js/main.js"></script>
+  <!-- 💙 Кнопка подтверждения -->
+<button id="loveButton">Нажми меня 💙</button>
+
+<!-- 💌 Сообщение, которое появится после нажатия -->
+<div id="loveMessage" class="hidden">
+  Нажатием этой кнопки вы подтверждаете, что вы самая любимая девушка на этой планете 💖
+</div>
+
+<script>
+  const button = document.getElementById('loveButton');
+  const message = document.getElementById('loveMessage');
+
+  button.addEventListener('click', () => {
+    message.classList.toggle('show');
+  });
+</script>
 </body>
 </html>
