@@ -148,16 +148,9 @@ img[alt="placeholder"]{filter:brightness(1.1) contrast(1.02)}
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 50, 100, 0.4);
   transition: all 0.3s ease;
-  font-family: "Segoe UI", sans-serif;
+  z-index: 9999;
 }
 
-#loveButton:hover {
-  transform: scale(1.1);
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
-  box-shadow: 0 6px 20px rgba(0, 100, 200, 0.6);
-}
-
-/* 💌 Сообщение */
 #loveMessage {
   position: fixed;
   bottom: 90px;
@@ -172,13 +165,14 @@ img[alt="placeholder"]{filter:brightness(1.1) contrast(1.02)}
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.5s ease;
-  font-family: "Segoe UI", sans-serif;
+  pointer-events: none;
+  z-index: 9998;
 }
 
-/* Анимация появления */
 #loveMessage.show {
   opacity: 1;
   transform: translateY(0);
+  pointer-events: auto;
 }
 
 .hidden {
