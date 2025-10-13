@@ -81,32 +81,11 @@ canvas#heartCanvas{position:fixed;left:0;top:0;width:100%;height:100%;z-index:0;
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
-.fade-in { animation: fadeIn 600ms ease both;
-}
-
-.fade-out { animation: fadeOut 500ms ease both;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px); /* сдвигается немного вниз */
-  }
-  to {
-    opacity: 1;
-    transform: none; /* возвращается в нормальное положение */
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-    transform: translateY(8px); /* уходит вниз и исчезает */
-  }
-}
+/* fade transitions */
+.fade-in{animation:fadeIn 600ms ease both}
+.fade-out{animation:fadeOut 500ms ease both}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes fadeOut{from{opacity:1}to{opacity:0;transform:translateY(8px)}}
 /* responsive */
 @media (max-width:700px){
   .gallery img{height:150px}
