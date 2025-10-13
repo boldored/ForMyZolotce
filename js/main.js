@@ -76,5 +76,8 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 document.addEventListener("DOMContentLoaded", () => {
   const gallery = document.querySelector(".gallery");
-  gallery.innerHTML += gallery.innerHTML; // дублируем фото, чтобы скролл был бесконечным
+  const track = document.querySelector(".gallery-track");
+
+  // Дублируем содержимое, чтобы вторая половина шла следом за первой
+  gallery.appendChild(track.cloneNode(true));
 });
