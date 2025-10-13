@@ -74,10 +74,4 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     init(); anim();
   }
-document.addEventListener("DOMContentLoaded", () => {
-  const gallery = document.querySelector(".gallery");
-  const track = document.querySelector(".gallery-track");
-
-  // Дублируем содержимое, чтобы вторая половина шла следом за первой
-  gallery.appendChild(track.cloneNode(true));
 });
