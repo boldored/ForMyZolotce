@@ -47,31 +47,36 @@ canvas#heartCanvas{position:fixed;left:0;top:0;width:100%;height:100%;z-index:0;
   overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: center;
   margin: 50px 0;
+  position: relative;
 }
 
+/* сама лента */
 .gallery {
   display: flex;
   gap: 20px;
-  animation: scrollGallery 40s linear infinite;
+  animation: scroll 40s linear infinite;
+  will-change: transform;
 }
 
 .gallery img {
   width: 200px;
   height: 260px;
-  border-radius: 16px;
   object-fit: cover;
+  border-radius: 16px;
+  flex-shrink: 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
 }
 
-/* Плавное движение ленты */
-@keyframes scrollGallery {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+.gallery img:hover {
+  transform: scale(1.08);
+}
+
+/* плавное движение влево */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* responsive */
