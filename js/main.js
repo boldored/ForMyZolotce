@@ -74,4 +74,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     init(); anim();
   }
+document.addEventListener("DOMContentLoaded", () => {
+  const gallery = document.querySelector(".gallery");
+  gallery.innerHTML += gallery.innerHTML; // дублируем фото для плавности
 });
