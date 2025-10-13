@@ -51,12 +51,15 @@ canvas#heartCanvas{position:fixed;left:0;top:0;width:100%;height:100%;z-index:0;
   position: relative;
 }
 
-/* сама лента */
 .gallery {
   display: flex;
+  width: max-content;
+  animation: scrollLoop 60s linear infinite;
+}
+
+.gallery-track {
+  display: flex;
   gap: 20px;
-  animation: scroll 40s linear infinite;
-  will-change: transform;
 }
 
 .gallery img {
@@ -73,12 +76,11 @@ canvas#heartCanvas{position:fixed;left:0;top:0;width:100%;height:100%;z-index:0;
   transform: scale(1.08);
 }
 
-/* плавное движение влево */
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+/* ключевая анимация */
+@keyframes scrollLoop {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
-
 /* responsive */
 @media (max-width:700px){
   .gallery img{height:150px}
